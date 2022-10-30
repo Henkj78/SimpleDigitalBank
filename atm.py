@@ -1,5 +1,7 @@
 # At the ATM you can deposit and withdraw money. You can also check balance.
 
+balance = 50000
+
 # Starting menu
 """Variables and input"""
 # String manipulation /n /t //
@@ -13,10 +15,21 @@ user_name = input("Pincode: ")
 
 # Choice
 print("\nWhat do you want to do:")
-choice = input("Enter ('W' for withdrawal, 'D' for deposit, 'B' balance or 'C' for cancel) ")
+choice = input("Enter ('W' for withdrawal, 'D' for deposit, 'B' balance or 'C' for cancel) ").lower()
+if choice == "w":
+    # Withdrawal (choice amount)
+    withdrawal_amount = int(input("What amount do you want to withdrawal: "))
+    balance -= withdrawal_amount
+elif choice == "d":
+    deposit_amount = int(input("What amount do you want to deposit: "))
+    balance += deposit_amount
+elif choice == "b":
+    print(f"Your balance: EUR {balance}")
+elif choice == "c":
+    print("Please wait for main menu")
+else:
+    print("Wrong button, please try again!")
 
-# Withdrawal (choice amount)
-amount = int(input("What amount do you want to withdrawal: "))
 
 # Wait
 print("Please wait")
@@ -31,7 +44,9 @@ print("Please wait, your withdrawal is being processed.")
 print("Please take out your money.")
 
 # receipt
-receipt = input("Do you want a receipt? Press 'Y' or 'N'.")
+receipt = input("Do you want a receipt? Press 'Y' or 'N'.").lower()
+if receipt == "y":
+    print("Please wait for receipt.")
 
 # ready
 print("Good buy! Till next time.")
@@ -48,9 +63,10 @@ balance -= 25000
 print(balance)
 
 # Checking current balance
-print("Your balance: EUR " + str(balance))
+print(f"Your balance: EUR {balance}")
 
 # What if the balance is not sufficient to withdraw?
+print("Sorry, you have insufficient funds")
 
 # Withdrawal
 # Ask for denominations
