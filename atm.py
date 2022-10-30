@@ -44,7 +44,7 @@ print("Please wait, your withdrawal is being processed.")
 print("Please take out your money.")
 
 # receipt
-receipt = input("Do you want a receipt? Press 'Y' or 'N'.").lower()
+receipt = input("Do you want a receipt? Press 'Y' or 'N' ").lower()
 if receipt == "y":
     print("Please wait for receipt.")
 
@@ -66,7 +66,7 @@ print(balance)
 print(f"Your balance: EUR {balance}")
 
 # What if the balance is not sufficient to withdraw?
-print("Sorry, you have insufficient funds")
+print("Withdrawal is not possible, you have insufficient funds")
 
 # Withdrawal
 # Ask for denominations
