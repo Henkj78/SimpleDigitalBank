@@ -67,6 +67,7 @@ print(f"Your balance: EUR {balance}")
 
 # What if the balance is not sufficient to withdraw?
 print("Withdrawal is not possible, you have insufficient funds")
+print(balance)
 
 # Withdrawal
 # Ask for denominations
