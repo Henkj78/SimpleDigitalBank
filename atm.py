@@ -19,7 +19,11 @@ choice = input("Enter ('W' for withdrawal, 'D' for deposit, 'B' balance or 'C' f
 if choice == "w":
     # Withdrawal (choice amount)
     withdrawal_amount = int(input("What amount do you want to withdrawal: "))
-    balance -= withdrawal_amount
+    if withdrawal_amount >= balance:
+        print(f"Withdrawal is not possible, you have insufficient funds. Your current balance is {balance}")
+    else:
+        balance -= withdrawal_amount
+        print(f"Your new balance is EUR {balance}")
 elif choice == "d":
     deposit_amount = int(input("What amount do you want to deposit: "))
     balance += deposit_amount
@@ -30,7 +34,7 @@ elif choice == "c":
 else:
     print("Wrong button, please try again!")
 
-
+print()
 # Wait
 print("Please wait")
 
@@ -50,24 +54,6 @@ if receipt == "y":
 
 # ready
 print("Good buy! Till next time.")
-
-"""Numbers"""
-balance = 50000
-
-# Deposit
-balance += 1500
-print(balance)
-
-# Withdrawal
-balance -= 25000
-print(balance)
-
-# Checking current balance
-print(f"Your balance: EUR {balance}")
-
-# What if the balance is not sufficient to withdraw?
-print("Withdrawal is not possible, you have insufficient funds")
-print(balance)
 
 # Withdrawal
 # Ask for denominations
